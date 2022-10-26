@@ -1,0 +1,15 @@
+{
+    "name": "nfctest.aslf",
+    "description": "App to test NFC",
+    "architecture": "@CLICK_ARCH@",
+    "title": "NFC Test",
+    "hooks": {
+        "nfctest": {
+            "apparmor": "nfctest.apparmor",
+            "desktop":  "nfctest.desktop"
+        }
+    },
+    "version": "1.0.0",
+    "maintainer": "ASLF <email@domain.org>",
+    "framework" : "@CLICK_FRAMEWORK@"
+}
