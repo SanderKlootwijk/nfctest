@@ -23,6 +23,8 @@ typedef enum nfc_mode {
 } NFC_MODE;
 
 #define NFC_MODES_P2P (NFC_MODE_P2P_INITIATOR | NFC_MODE_P2P_TARGET)
+#define NFC_MODES_ALL (NFC_MODE_P2P_INITIATOR | NFC_MODE_P2P_TARGET | \
+    NFC_MODE_READER_WRITER | NFC_MODE_CARD_EMILATION)
 
 Reader::Reader() {
     this->m_daemonIface =
@@ -43,7 +45,7 @@ Reader::~Reader()
 void Reader::listenService()
 {
     // Switch mode to P2P target
-    this->m_daemonIface->RequestMode(NFC_MODES_P2P, NFC_MODE_READER_WRITER);
+    this->m_daemonIface->RequestMode(NFC_MODES_ALL, NFC_MODE_READER_WRITER);
 
     // Pick the first available adapter
     QString adapterPath;
